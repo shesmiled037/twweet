@@ -3,21 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contoh Tweet + Video Player Card</title>
+<title>Contoh Video Player Card</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #f5f5f5;
+    text-align: center;
 }
 h1 {
-    text-align: center;
     margin-bottom: 40px;
-}
-.twitter-embed-container {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
 }
 video {
     display: block;
@@ -32,7 +28,7 @@ video {
 <meta name="twitter:title" content="Judul Video Contoh">
 <meta name="twitter:description" content="Deskripsi video contoh">
 <meta name="twitter:image" content="https://lampung7news.co.id/go/thumb.jpg"> <!-- ganti thumbnail jika ada -->
-<meta name="twitter:player" content="https://lampung7news.co.id/go/cewe.mp4"> <!-- URL video sebagai player -->
+<meta name="twitter:player" content="https://lampung7news.co.id/go/cewe.mp4">
 <meta name="twitter:player:width" content="640">
 <meta name="twitter:player:height" content="360">
 <meta name="twitter:player:stream" content="https://lampung7news.co.id/go/cewe.mp4">
@@ -40,29 +36,13 @@ video {
 </head>
 <body>
 
-<h1>Contoh Embed Tweet & Video</h1>
+<h1>Contoh Video Player Card</h1>
 
-<!-- Embed Tweet -->
-<div class="twitter-embed-container">
-    <blockquote class="twitter-tweet" data-media-max-width="560">
-        <p lang="zxx" dir="ltr">
-            <a href="https://t.co/xThWET2WHp">pic.twitter.com/xThWET2WHp</a>
-        </p>
-        - Lily (@stirove)
-        <a href="https://twitter.com/stirove/status/1971862548451663916?ref_src=twsrc%5Etfw">
-            September 27, 2025
-        </a>
-    </blockquote>
-</div>
-
-<!-- Pemutar video -->
+<!-- Pemutar video di halaman -->
 <video controls>
     <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
     Browser Anda tidak mendukung tag video.
 </video>
-
-<!-- Script resmi Twitter -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </body>
 </html>
