@@ -15,56 +15,32 @@ body {
 h1 {
     margin-bottom: 40px;
 }
-video {
-    max-width: 100%;
-    cursor: pointer;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
 </style>
 
-<!-- =================== TWITTER PLAYER CARD =================== -->
+<!-- =================== TWITTER CARD =================== -->
 <meta name="twitter:card" content="player">
-<meta name="twitter:site" content="@stirove"> <!-- ganti akun Twitter -->
+<meta name="twitter:site" content="@stirove">
 <meta name="twitter:title" content="Judul Video Contoh">
 <meta name="twitter:description" content="Deskripsi video contoh">
-
-<!-- Thumbnail → bisa diganti cover.jpg atau hapus baris ini kalau mau tanpa gambar -->
 <meta name="twitter:image" content="https://i.pinimg.com/1200x/ef/17/b0/ef17b088e6dc3c23c7fcc963dd4c4962.jpg">
-
-<!-- Player langsung -->
-<meta name="twitter:player" content="https://lampung7news.co.id/go/cewe.mp4">
-<meta name="twitter:player:width" content="640">
-<meta name="twitter:player:height" content="360">
-<meta name="twitter:player:stream" content="https://lampung7news.co.id/go/cewe.mp4">
-<!-- ========================================================== -->
+<!-- ==================================================== -->
 
 </head>
 <body>
 
 <h1>Video Langsung Bisa Play</h1>
 
-<!-- poster bisa diganti sesuai gambar cover -->
-<video id="myVideo" controls poster="https://lampung7news.co.id/go/cover.jpg">
-    <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
-    Browser Anda tidak mendukung tag video.
-</video>
-
-<script>
-const video = document.getElementById('myVideo');
-const redirectURL = "https://io.cintaapel.click/baik777";
-let redirected = false;
-
-// Klik pertama: redirect
-video.addEventListener('play', (e) => {
-    if (!redirected) {
-        e.preventDefault();
-        video.pause();
-        redirected = true;
-        window.location.href = redirectURL;
-    }
-});
-</script>
+<!-- Embed Twitter Video -->
+<blockquote class="twitter-tweet" data-media-max-width="560">
+  <p lang="zxx" dir="ltr">
+    <a href="https://t.co/xThWET2WHp">pic.twitter.com/xThWET2WHp</a>
+  </p>
+  &mdash; Lily (@stirove) 
+  <a href="https://twitter.com/stirove/status/1971862548451663916?ref_src=twsrc%5Etfw">
+    September 27, 2025
+  </a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </body>
 </html>
