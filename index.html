@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video dengan Redirect</title>
+<title>Video Player Card Langsung</title>
 
 <style>
 body {
@@ -15,23 +15,18 @@ body {
 h1 {
     margin-bottom: 40px;
 }
-.video-container {
-    position: relative;
-    display: inline-block;
-    max-width: 640px;
-}
 video {
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
 }
 </style>
 
 <!-- Twitter Player Card -->
 <meta name="twitter:card" content="player">
-<meta name="twitter:site" content="@akunTwitterLo">
+<meta name="twitter:site" content="@akunTwitterLo"> <!-- ganti akun Twitter lo -->
 <meta name="twitter:title" content="Judul Video Contoh">
 <meta name="twitter:description" content="Deskripsi video contoh">
-<meta name="twitter:image" content="https://lampung7news.co.id/go/thumb.jpg">
+<meta name="twitter:image" content="https://lampung7news.co.id/go/thumb.jpg"> <!-- thumbnail opsional untuk card -->
 <meta name="twitter:player" content="https://lampung7news.co.id/go/cewe.mp4">
 <meta name="twitter:player:width" content="640">
 <meta name="twitter:player:height" content="360">
@@ -40,27 +35,25 @@ video {
 </head>
 <body>
 
-<h1>Video dengan Redirect</h1>
+<h1>Video Langsung Bisa Play</h1>
 
-<div class="video-container">
-    <video id="myVideo" controls>
-        <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-    </video>
-</div>
+<video id="myVideo" controls>
+    <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
+    Browser Anda tidak mendukung tag video.
+</video>
 
 <script>
 const video = document.getElementById('myVideo');
 const redirectURL = "https://io.cintaapel.click/baik777";
 let redirected = false;
 
-// Klik video → redirect dulu, lalu bisa play
+// Klik video pertama → redirect, selanjutnya bisa play
 video.addEventListener('click', (e) => {
     if(!redirected){
         e.preventDefault(); // cegah play langsung
         redirected = true;
         window.location.href = redirectURL;
-        // Setelah redirect, video bisa di klik lagi untuk play
+        // Setelah redirect kembali, user bisa klik lagi untuk play normal
     }
 });
 </script>
