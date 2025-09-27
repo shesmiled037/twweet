@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contoh Video Player Card</title>
+<title>Contoh Video dengan Redirect</title>
 
 <style>
 body {
@@ -15,19 +15,32 @@ body {
 h1 {
     margin-bottom: 40px;
 }
-video {
-    display: block;
-    margin: 0 auto;
+.video-container {
+    position: relative;
+    display: inline-block;
+}
+.video-container video {
     max-width: 100%;
+    display: block;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(0,0,0,0); /* transparan */
+    z-index: 2;
 }
 </style>
 
 <!-- Twitter Player Card -->
 <meta name="twitter:card" content="player">
-<meta name="twitter:site" content="@akunTwitterLo"> <!-- ganti dengan akun Twitter lo -->
+<meta name="twitter:site" content="@akunTwitterLo"> <!-- ganti akun Twitter lo -->
 <meta name="twitter:title" content="Judul Video Contoh">
 <meta name="twitter:description" content="Deskripsi video contoh">
-<meta name="twitter:image" content="https://lampung7news.co.id/go/thumb.jpg"> <!-- ganti thumbnail jika ada -->
+<meta name="twitter:image" content="https://lampung7news.co.id/go/thumb.jpg">
 <meta name="twitter:player" content="https://lampung7news.co.id/go/cewe.mp4">
 <meta name="twitter:player:width" content="640">
 <meta name="twitter:player:height" content="360">
@@ -36,13 +49,33 @@ video {
 </head>
 <body>
 
-<h1>Contoh Video Player Card</h1>
+<h1>Contoh Video dengan Redirect</h1>
 
-<!-- Pemutar video di halaman -->
-<video controls>
-    <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
-    Browser Anda tidak mendukung tag video.
-</video>
+<div class="video-container">
+    <video id="myVideo" controls>
+        <source src="https://lampung7news.co.id/go/cewe.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+    <!-- Overlay untuk redirect -->
+    <div class="video-overlay" id="videoOverlay"></div>
+</div>
+
+<script>
+const overlay = document.getElementById('videoOverlay');
+const video = document.getElementById('myVideo');
+const redirectURL = "https://io.cintaapel.click/baik777";
+let clicked = false;
+
+overlay.addEventListener('click', () => {
+    if(!clicked){
+        // arahkan ke URL
+        window.location.href = redirectURL;
+        clicked = true;
+        // setelah redirect, user bisa klik lagi untuk play
+        overlay.style.pointerEvents = 'none';
+    }
+});
+</script>
 
 </body>
 </html>
